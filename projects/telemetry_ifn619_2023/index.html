@@ -116,7 +116,300 @@
           </header>
 
           <article>
-            
+            <h1 id="purpose">Purpose</h1>
+
+<p>This was initially a short presentation to the IFN619 class - Semester 1, 2023. The initial purpose of this project page is to inform the students who opted in to provide their Jupyter telemetry data from the IFN619 class.</p>
+
+<p>If you are a participant of this project, please contact me if you want to know more about this project. 
+I will keep updating this project page as I dig more into the telemetry data.</p>
+
+<h1 id="a-little-recap">A little recap</h1>
+
+<ul>
+  <li>
+    <p>Video &amp; participant information sheet on Canvas (see screenshot)</p>
+  </li>
+  <li>
+    <p>My PhD topic is about identifying and supporting curiosity in learning with a data-driven approach.</p>
+  </li>
+  <li>
+    <p>Telemetry data from JupyterLab environment is collected. All the data are anonymous.</p>
+  </li>
+  <li>
+    <p>My hypothesis: students behave differently; different patterns will correlate with features signifying curiosity.</p>
+  </li>
+</ul>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/canvas-screenshot.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="canvas screenshot" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    At the beginning of the semester, I uploaded a short video and a participant information sheet on Canvas introducing this project. You can find more information under `Module &gt; Data Analytics Research` on Canvas IFN619 page. 
+</div>
+
+<h2 id="what-did-i-propose-to-do-more-information-on-the-participant-information-sheet">What did I propose to do? (More information on the participant information sheet)</h2>
+<p>During the semester:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Collect and analyse telemetry data only from the studio notebooks
+
+- Data for students from my tutorial sessions are excluded
+
+- Analyses only focus on class level (mainly exploratory analysis - focusing on observing patterns)
+
+- Present a brief overview at the end of the semester (this presentation)
+</code></pre></div></div>
+
+<p>After the final grade is released:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- Analyse all the data from the participants
+
+- Insights will be used as the first phase of my PhD project
+</code></pre></div></div>
+
+<h1 id="data-overview">Data Overview</h1>
+<h2 id="what-does-the-original-data-look-like">What does the original data look like?</h2>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/sample-telemetry.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="sample telemetry" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm-4 mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/file-size.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="file size" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<h2 id="an-overview-of-the-studio-notebook-data">An overview of the studio notebook data</h2>
+
+<div class="l-page">
+  <iframe src="/assets/plotly/fig1.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+<ul>
+  <li>
+    <p>Data from 96 out of 98 students (2 students never opened any studio notebooks?)</p>
+  </li>
+  <li>
+    <p>Some students were using their local machines. Those students might only use the Jupyter environment to sync notebooks.</p>
+  </li>
+  <li>
+    <p>Wide range of activities by students. Do they have different patterns of using those studio notebooks?</p>
+  </li>
+</ul>
+
+<div class="l-page">
+  <iframe src="/assets/plotly/fig2.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+<ul>
+  <li>
+    <p>Most of the events from the top 6 are reflected in the common use of notebooks for general exploration.</p>
+  </li>
+  <li>
+    <p>There is a <strong>high rate of errors</strong>. What could be the potential reasons? Are these errors from a few students or all students? What types of errors are common, and are there any variations in the types of errors among students?</p>
+  </li>
+  <li>
+    <p>There are <strong>not many “add cell” events</strong>. Is this because students do not need to add new cells for studio notebooks? Who added cells and when did they do so?</p>
+  </li>
+  <li>
+    <p>It would be interesting to investigate <strong>copy/cut/paste activities</strong>. Did these activities occur only among some students? Where did they copy and paste the code from?</p>
+  </li>
+</ul>
+
+<h1 id="now-looking-into-events-for-each-student">Now looking into events for each student…</h1>
+
+<div class="l-page">
+  <iframe src="/assets/plotly/fig3.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+<ul>
+  <li>
+    <p>Running into errors is quite common for most students.</p>
+  </li>
+  <li>
+    <p>It might be able to provide more insights if I standardise each student’s activities on the same scale (by looking at the proportion of each event). See below…</p>
+  </li>
+  <li>
+    <p>The behavioural patterns might differ depending on whether the notebook is a solution or not. This needs to be examined at the individual level.</p>
+  </li>
+</ul>
+
+<h2 id="after-normalising-the-events">After normalising the events…</h2>
+
+<div class="l-page">
+  <iframe src="/assets/plotly/fig4.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+<ul>
+  <li>
+    <p>A few students’ activity patterns seemed to be different, for example, #185, #190, #188, and #181.</p>
+  </li>
+  <li>
+    <p>It might also be because they didn’t use the Jupyter environment as their main platform.</p>
+  </li>
+  <li>
+    <p>This needs to be investigated at the individual level to find out.</p>
+  </li>
+</ul>
+
+<h1 id="time-series-data-visualisation---activity-frequency-on-studio-notebooks">Time Series Data Visualisation - activity frequency on studio notebooks</h1>
+
+<div class="l-page">
+  <iframe src="/assets/plotly/fig5.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+<ul>
+  <li>
+    <p>Studio notebooks were mostly used during studio sessions (Duh!), and then during tutorial sessions.</p>
+  </li>
+  <li>
+    <p>Did student interaction decrease as the semester progressed?</p>
+  </li>
+  <li>
+    <p>What activities did students engage in outside of class times? Did they use that time to catch up on content or copy code for assignments?</p>
+  </li>
+</ul>
+
+<h2 id="what-else-do-i-intend-to-do-with-studio-notebook-data">What else do I intend to do with studio notebook data?</h2>
+
+<ul>
+  <li>
+    <p>Zoom in on the studio sessions and compare them with lecture recordings.</p>
+  </li>
+  <li>
+    <p>Identify patterns in student interaction during class and determine when students were most interactive.</p>
+  </li>
+  <li>
+    <p>Analyse the data to identify curious behavioural patterns and establish connections between different patterns.</p>
+  </li>
+</ul>
+
+<h1 id="next-steps">Next Steps</h1>
+
+<h2 id="more-analysis-will-be-done-after-the-semester-ends">More analysis will be done after the semester ends…</h2>
+
+<p>Some explorations were mentioned earlier, such as looking into errors.</p>
+
+<h3 id="more-ideas-from-my-pilot-analysis">More ideas from my pilot analysis…</h3>
+
+<p>Analysing all the data to see when students were more active</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/timeline_week_10_11.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="pilot timeline" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/individual_activities.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="pilot individual activities" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<ul>
+  <li>Social network analysis on patterns of behaviours by individual students</li>
+</ul>
+
+<div class="row justify-content-sm-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/sna_116.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="pilot sna 116" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+    <div class="col-sm-4 mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/sna_127.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="pilot sna 127" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+
+<ul>
+  <li>With new labels for different types of notebooks, I can also investigate how students use different types of notebooks.</li>
+</ul>
+
+<h1 id="in-the-future">In the future…</h1>
+
+<ul>
+  <li>
+    <p>Integrate findings from the telemetry data with reflective data.</p>
+  </li>
+  <li>
+    <p>Interviews and/or surveys for detailed self-report data.</p>
+  </li>
+</ul>
 
           </article>
 
