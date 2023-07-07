@@ -7,14 +7,19 @@ importance: 1
 category: phd project
 ---
 
-# Purpose
+# Presentation on Week 13
+
+The contents in this section were presented in classes on Week 13. The original contents were migrated from the Google Sites. 
+For any updates after the presentation, please go to the next section. 
+
+## Purpose
 
 This was initially a short presentation to the IFN619 class - Semester 1, 2023. The initial purpose of this project page is to inform the students who opted in to provide their Jupyter telemetry data from the IFN619 class. 
 
 If you are a participant of this project, please contact me if you want to know more about this project. 
 I will keep updating this project page as I dig more into the telemetry data. 
 
-# A little recap
+## A little recap
 
 - Video & participant information sheet on Canvas (see screenshot) 
 
@@ -50,8 +55,8 @@ After the final grade is released:
 
     - Insights will be used as the first phase of my PhD project
 
-# Data Overview
-## What does the original data look like? 
+## Data Overview
+### What does the original data look like? 
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
@@ -62,7 +67,7 @@ After the final grade is released:
     </div>
 </div>
 
-## An overview of the studio notebook data
+### An overview of the studio notebook data
 
 <div class="l-page">
   <iframe src="{{ '/assets/plotly/fig1.html' | relative_url }}" frameborder='0' scrolling='no' height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
@@ -86,7 +91,7 @@ After the final grade is released:
 
 - It would be interesting to investigate **copy/cut/paste activities**. Did these activities occur only among some students? Where did they copy and paste the code from?
 
-# Now looking into events for each student...
+## Now looking into events for each student...
 
 <div class="l-page">
   <iframe src="{{ '/assets/plotly/fig3.html' | relative_url }}" frameborder='0' scrolling='no' height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
@@ -98,7 +103,7 @@ After the final grade is released:
 
 - The behavioural patterns might differ depending on whether the notebook is a solution or not. This needs to be examined at the individual level.
 
-## After normalising the events...
+### After normalising the events...
 
 <div class="l-page">
   <iframe src="{{ '/assets/plotly/fig4.html' | relative_url }}" frameborder='0' scrolling='no' height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
@@ -110,7 +115,7 @@ After the final grade is released:
 
 - This needs to be investigated at the individual level to find out.
 
-# Time Series Data Visualisation - activity frequency on studio notebooks
+## Time Series Data Visualisation - activity frequency on studio notebooks
 
 <div class="l-page">
   <iframe src="{{ '/assets/plotly/fig5.html' | relative_url }}" frameborder='0' scrolling='no' height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
@@ -122,7 +127,7 @@ After the final grade is released:
 
 - What activities did students engage in outside of class times? Did they use that time to catch up on content or copy code for assignments?
 
-## What else do I intend to do with studio notebook data?
+### What else do I intend to do with studio notebook data?
 
 - Zoom in on the studio sessions and compare them with lecture recordings.
 
@@ -130,13 +135,13 @@ After the final grade is released:
 
 - Analyse the data to identify curious behavioural patterns and establish connections between different patterns.
 
-# Next Steps
+## Next Steps
 
-## More analysis will be done after the semester ends... 
+### More analysis will be done after the semester ends... 
 
 Some explorations were mentioned earlier, such as looking into errors.  
 
-### More ideas from my pilot analysis... 
+#### More ideas from my pilot analysis... 
 
 Analysing all the data to see when students were more active
 
@@ -164,8 +169,44 @@ Analysing all the data to see when students were more active
 
 - With new labels for different types of notebooks, I can also investigate how students use different types of notebooks. 
 
-# In the future... 
+## In the future... 
 
 - Integrate findings from the telemetry data with reflective data.
 
 - Interviews and/or surveys for detailed self-report data. 
+
+# A more comprehensive analysis (work in progress)
+
+This section records all the steps I am taking to analyse the telemetry data. Since this is a work in progress, the contents below may not be consistent. I will try to update as much as I can to have a clear flow. Thanks for your understanding. 
+
+## Preparation
+
+I continued to use the code from previous analysis. The first step is to combine all the data into a single file with a tabular format. 
+As mentioned above, one activity (such as a click by a student) is recorded as a single `JSON` file, including the event and many information associated with the event. 
+Since there are around **7.7 millions** of files, it will take a long time to process all the data. However, I only extracted the information I consider to be important to my study at this stage, including `event_name`, `session_id`, `session_seq`, `request_time`, `user_id`, `error_name`, `error_value` and `notebook_name`. Below is a short description of those variables:
+
+- `event_name`: The name of an event from a student interacting with the Jupyter Notebook. 14 events are recorded in the data: 
+    - open_notebook
+    - close_notebook
+    - save_notebook
+    - notebook_visible
+    - notebook_hidden
+    - scroll
+    - cell_executed
+    - active_cell_changed
+    - add_cell
+    - remove_cell
+    - cell_errored
+    - clipboard_copy
+    - clipboard_paste
+    - clipboard_cut
+- `session_id`: Every time a student opens a Jupyter Notebook triggers a "session". If a student opens multiple notebooks in the Jupyter environment, multiple sessions will be generated. 
+- `session_seq`: Each event within a session is assigned a session sequence. Since a student can open multiple notebooks, resulting in multiple sessions recorded simultaneously. Therefore, we consider session sequences as a linear process. 
+- `request_time`: Timestamp of the event occurred. All the time are UTC time. Later, I will convert the time into Brisbane time to align with the class times. 
+- `user_id`: In the raw data, `user_id` is the QUT student ID. As part of the ethical considerations, I will not use `user_id` as the unique identifier. I will replace the `user_id` with randomly generated ID numbers so student identities remain unrevealed. Please note, only `open_notebook` event files recorded `user_id`, therefore, I have to use `session_id` to link all other events to the same user. 
+- `error_name`: Events only recorded when an error is occurred in a Jupyter Notebook. 
+- `error_value`: The error message displayed when an error is occurred. 
+- `notebook_name`: This is the new feature this semester. It records the name of the Jupyter Notebook the event was triggered. 
+
+After over 2 hours, all the raw data have been processed into a single csv file for cleaning and processing. 
+
