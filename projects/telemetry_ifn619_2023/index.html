@@ -116,14 +116,19 @@
           </header>
 
           <article>
-            <h1 id="purpose">Purpose</h1>
+            <h1 id="presentation-on-week-13">Presentation on Week 13</h1>
+
+<p>The contents in this section were presented in classes on Week 13. The original contents were migrated from the Google Sites. 
+For any updates after the presentation, please go to the next section.</p>
+
+<h2 id="purpose">Purpose</h2>
 
 <p>This was initially a short presentation to the IFN619 class - Semester 1, 2023. The initial purpose of this project page is to inform the students who opted in to provide their Jupyter telemetry data from the IFN619 class.</p>
 
 <p>If you are a participant of this project, please contact me if you want to know more about this project. 
 I will keep updating this project page as I dig more into the telemetry data.</p>
 
-<h1 id="a-little-recap">A little recap</h1>
+<h2 id="a-little-recap">A little recap</h2>
 
 <ul>
   <li>
@@ -179,8 +184,8 @@ I will keep updating this project page as I dig more into the telemetry data.</p
 - Insights will be used as the first phase of my PhD project
 </code></pre></div></div>
 
-<h1 id="data-overview">Data Overview</h1>
-<h2 id="what-does-the-original-data-look-like">What does the original data look like?</h2>
+<h2 id="data-overview">Data Overview</h2>
+<h3 id="what-does-the-original-data-look-like">What does the original data look like?</h3>
 
 <div class="row justify-content-sm-center">
     <div class="col-sm-8 mt-3 mt-md-0">
@@ -213,7 +218,7 @@ I will keep updating this project page as I dig more into the telemetry data.</p
     </div>
 </div>
 
-<h2 id="an-overview-of-the-studio-notebook-data">An overview of the studio notebook data</h2>
+<h3 id="an-overview-of-the-studio-notebook-data">An overview of the studio notebook data</h3>
 
 <div class="l-page">
   <iframe src="/assets/plotly/fig1.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
@@ -250,7 +255,7 @@ I will keep updating this project page as I dig more into the telemetry data.</p
   </li>
 </ul>
 
-<h1 id="now-looking-into-events-for-each-student">Now looking into events for each student…</h1>
+<h2 id="now-looking-into-events-for-each-student">Now looking into events for each student…</h2>
 
 <div class="l-page">
   <iframe src="/assets/plotly/fig3.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
@@ -268,7 +273,7 @@ I will keep updating this project page as I dig more into the telemetry data.</p
   </li>
 </ul>
 
-<h2 id="after-normalising-the-events">After normalising the events…</h2>
+<h3 id="after-normalising-the-events">After normalising the events…</h3>
 
 <div class="l-page">
   <iframe src="/assets/plotly/fig4.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
@@ -286,7 +291,7 @@ I will keep updating this project page as I dig more into the telemetry data.</p
   </li>
 </ul>
 
-<h1 id="time-series-data-visualisation---activity-frequency-on-studio-notebooks">Time Series Data Visualisation - activity frequency on studio notebooks</h1>
+<h2 id="time-series-data-visualisation---activity-frequency-on-studio-notebooks">Time Series Data Visualisation - activity frequency on studio notebooks</h2>
 
 <div class="l-page">
   <iframe src="/assets/plotly/fig5.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
@@ -304,7 +309,7 @@ I will keep updating this project page as I dig more into the telemetry data.</p
   </li>
 </ul>
 
-<h2 id="what-else-do-i-intend-to-do-with-studio-notebook-data">What else do I intend to do with studio notebook data?</h2>
+<h3 id="what-else-do-i-intend-to-do-with-studio-notebook-data">What else do I intend to do with studio notebook data?</h3>
 
 <ul>
   <li>
@@ -318,13 +323,13 @@ I will keep updating this project page as I dig more into the telemetry data.</p
   </li>
 </ul>
 
-<h1 id="next-steps">Next Steps</h1>
+<h2 id="next-steps">Next Steps</h2>
 
-<h2 id="more-analysis-will-be-done-after-the-semester-ends">More analysis will be done after the semester ends…</h2>
+<h3 id="more-analysis-will-be-done-after-the-semester-ends">More analysis will be done after the semester ends…</h3>
 
 <p>Some explorations were mentioned earlier, such as looking into errors.</p>
 
-<h3 id="more-ideas-from-my-pilot-analysis">More ideas from my pilot analysis…</h3>
+<h4 id="more-ideas-from-my-pilot-analysis">More ideas from my pilot analysis…</h4>
 
 <p>Analysing all the data to see when students were more active</p>
 
@@ -400,7 +405,7 @@ I will keep updating this project page as I dig more into the telemetry data.</p
   <li>With new labels for different types of notebooks, I can also investigate how students use different types of notebooks.</li>
 </ul>
 
-<h1 id="in-the-future">In the future…</h1>
+<h2 id="in-the-future">In the future…</h2>
 
 <ul>
   <li>
@@ -410,6 +415,55 @@ I will keep updating this project page as I dig more into the telemetry data.</p
     <p>Interviews and/or surveys for detailed self-report data.</p>
   </li>
 </ul>
+
+<h1 id="a-more-comprehensive-analysis-work-in-progress">A more comprehensive analysis (work in progress)</h1>
+
+<p>This section records all the steps I am taking to analyse the telemetry data. Since this is a work in progress, the contents below may not be consistent. I will try to update as much as I can to have a clear flow. Thanks for your understanding.</p>
+
+<h2 id="preparation">Preparation</h2>
+
+<p>I continued to use the code from previous analysis. The first step is to combine all the data into a single file with a tabular format. 
+As mentioned above, one activity (such as a click by a student) is recorded as a single <code class="language-plaintext highlighter-rouge">JSON</code> file, including the event and many information associated with the event. 
+Since there are around <strong>7.7 millions</strong> of files, it will take a long time to process all the data. However, I only extracted the information I consider to be important to my study at this stage, including <code class="language-plaintext highlighter-rouge">event_name</code>, <code class="language-plaintext highlighter-rouge">session_id</code>, <code class="language-plaintext highlighter-rouge">session_seq</code>, <code class="language-plaintext highlighter-rouge">request_time</code>, <code class="language-plaintext highlighter-rouge">user_id</code>, <code class="language-plaintext highlighter-rouge">error_name</code>, <code class="language-plaintext highlighter-rouge">error_value</code> and <code class="language-plaintext highlighter-rouge">notebook_name</code>. Below is a short description of those variables:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">event_name</code>: The name of an event from a student interacting with the Jupyter Notebook. 14 events are recorded in the data:
+    <ul>
+      <li>open_notebook</li>
+      <li>close_notebook</li>
+      <li>save_notebook</li>
+      <li>notebook_visible</li>
+      <li>notebook_hidden</li>
+      <li>scroll</li>
+      <li>cell_executed</li>
+      <li>active_cell_changed</li>
+      <li>add_cell</li>
+      <li>remove_cell</li>
+      <li>cell_errored</li>
+      <li>clipboard_copy</li>
+      <li>clipboard_paste</li>
+      <li>clipboard_cut</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">session_id</code>: Every time a student opens a Jupyter Notebook triggers a “session”. If a student opens multiple notebooks in the Jupyter environment, multiple sessions will be generated.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">session_seq</code>: Each event within a session is assigned a session sequence. Since a student can open multiple notebooks, resulting in multiple sessions recorded simultaneously. Therefore, we consider session sequences as a linear process.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">request_time</code>: Timestamp of the event occurred. All the time are UTC time. Later, I will convert the time into Brisbane time to align with the class times.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">user_id</code>: In the raw data, <code class="language-plaintext highlighter-rouge">user_id</code> is the QUT student ID. As part of the ethical considerations, I will not use <code class="language-plaintext highlighter-rouge">user_id</code> as the unique identifier. I will replace the <code class="language-plaintext highlighter-rouge">user_id</code> with randomly generated ID numbers so student identities remain unrevealed. Please note, only <code class="language-plaintext highlighter-rouge">open_notebook</code> event files recorded <code class="language-plaintext highlighter-rouge">user_id</code>, therefore, I have to use <code class="language-plaintext highlighter-rouge">session_id</code> to link all other events to the same user.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">error_name</code>: Events only recorded when an error is occurred in a Jupyter Notebook.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">error_value</code>: The error message displayed when an error is occurred.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">notebook_name</code>: This is the new feature this semester. It records the name of the Jupyter Notebook the event was triggered.</li>
+</ul>
+
+<p>After over 2 hours, all the raw data have been processed into a single csv file for cleaning and processing.</p>
+
 
           </article>
 
