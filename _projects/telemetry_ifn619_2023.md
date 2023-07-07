@@ -175,6 +175,8 @@ Analysing all the data to see when students were more active
 
 - Interviews and/or surveys for detailed self-report data. 
 
+---
+
 # A more comprehensive analysis (work in progress)
 
 This section records all the steps I am taking to analyse the telemetry data. Since this is a work in progress, the contents below may not be consistent. I will try to update as much as I can to have a clear flow. Thanks for your understanding. 
