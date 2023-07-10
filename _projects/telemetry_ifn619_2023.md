@@ -42,17 +42,17 @@ I will keep updating this project page as I dig more into the telemetry data.
 During the semester: 
 
     - Collect and analyse telemetry data only from the studio notebooks
-
+    
     - Data for students from my tutorial sessions are excluded
-
+    
     - Analyses only focus on class level (mainly exploratory analysis - focusing on observing patterns)
-
+    
     - Present a brief overview at the end of the semester (this presentation)
 
 After the final grade is released: 
 
     - Analyse all the data from the participants
-
+    
     - Insights will be used as the first phase of my PhD project
 
 ## Data Overview
@@ -208,7 +208,9 @@ Since there are around **7.7 millions** of files, it will take a long time to pr
 - `user_id`: In the raw data, `user_id` is the QUT student ID. As part of the ethical considerations, I will not use `user_id` as the unique identifier. I will replace the `user_id` with randomly generated ID numbers so student identities remain unrevealed. Please note, only `open_notebook` event files recorded `user_id`, therefore, I have to use `session_id` to link all other events to the same user. 
 - `error_name`: Events only recorded when an error is occurred in a Jupyter Notebook. 
 - `error_value`: The error message displayed when an error is occurred. 
-- `notebook_name`: This is the new feature this semester. It records the name of the Jupyter Notebook the event was triggered. 
+- `notebook_name`: This is the new feature this semester. It records the name of the Jupyter Notebook the event was triggered. Recording the notebook names is important for my project as different types of events may associated with different types of notebooks. For example, for a studio notebook, students may follow the steps of a lecture and fill the gaps as they listen to the lecture; for a tutorial notebook, students will try some code by themselves. Therefore, you would imagine the majority of events for a studio notebook will be executing cells, while a tutorial notebook will have a wider variety of events such as copying, pasting, running into errors, etc. This example is only considering the scenario during a learning experience by a student, it may change when assignments involved.
 
 After over 2 hours, all the raw data have been processed into a single csv file for cleaning and processing. 
+
+## Data preparation
 
