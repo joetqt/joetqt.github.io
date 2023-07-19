@@ -3,7 +3,7 @@ layout: page
 title: Confidence and Curiosity 
 description: Telemetry Data from IAB303 2023
 img: assets/img/banner-typing.jpg
-importance: 2
+importance: 1
 category: phd project
 ---
 

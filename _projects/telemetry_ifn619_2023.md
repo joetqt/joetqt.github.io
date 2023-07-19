@@ -3,7 +3,7 @@ layout: page
 title: Using Trace Data to Find Evidence of Curiosity in Learning
 description: Telemetry Data from IFN619 2023
 img: assets/img/stay_curious.jpg
-importance: 1
+importance: 2
 category: phd project
 ---
 
