@@ -59,10 +59,10 @@ After the final grade is released:
 ### What does the original data look like? 
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
+    <div class="col-sm-6 mt-3 mt-md-0">
         {% include figure.html path="assets/img/sample-telemetry.png" title="sample telemetry" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
+    <div class="col-sm-6 mt-3 mt-md-0">
         {% include figure.html path="assets/img/file-size.jpg" title="file size" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
@@ -159,10 +159,10 @@ Analysing all the data to see when students were more active
 - Social network analysis on patterns of behaviours by individual students
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
+    <div class="col-sm-6 mt-3 mt-md-0">
         {% include figure.html path="assets/img/sna_116.png" title="pilot sna 116" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
+    <div class="col-sm-6 mt-3 mt-md-0">
         {% include figure.html path="assets/img/sna_127.png" title="pilot sna 127" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
