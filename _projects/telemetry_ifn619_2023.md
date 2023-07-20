@@ -62,7 +62,7 @@ After the final grade is released:
     <div class="col-sm-6 mt-3 mt-md-0">
         {% include figure.html path="assets/img/sample-telemetry.png" title="sample telemetry" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm-6 mt-3 mt-md-0">
+    <div class="col-sm-3 mt-3 mt-md-0">
         {% include figure.html path="assets/img/file-size.jpg" title="file size" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
