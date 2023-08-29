@@ -212,7 +212,7 @@ Since there are around **7.7 millions** of files, it will take a long time to pr
 
 After over 2 hours, all the raw data have been processed into a single csv file for cleaning and processing. 
 
-## Data preparation
+### Data preparation
 
 It is not too bad to reduce the size from the raw data (~250 GB) to the processed csv file (~750 MB). The raw data contains 7,685,002 rows of records. Below are some statistics and initial observations about the raw data:
 
@@ -236,7 +236,7 @@ It is not too bad to reduce the size from the raw data (~250 GB) to the processe
 
 Above information may not be accurate because there are lots of issues in the raw data. The next step will be clean the data and some exploratory data analysis as data cleaning progresses.
 
-## Data cleaning
+### Data cleaning
 
 Steps as listed below were taken to clean the data:
 
@@ -244,7 +244,55 @@ Steps as listed below were taken to clean the data:
 - Once all the users were identified in the dataset, I then replaced the real IDs with some computer-generated IDs. Therefore, no student identities can be identified from the analysis. 
 - Since nobody opted out from the experiment, no action was taken to remove any records from the dataset. 
 - During the semester, a filter was applied to only include the studio notebooks in the analysis. The studio notebooks can be identified by the `notebook_name` column. Since the semester for IFN619, semester 1 concluded, this filter does not need to be applied for the analysis. 
-- Note that the student list was from week 3, therefore, if any students who enrolled after week 3 were not included in the analysis (as proposed in the ethics application). In addition, some students might drop out of the unit after week 3. For those students, I will apply a filter to check when was their last activity in the Jupyter environment. No further activities after the census day are considered to be inactive and will not be included in the analysis. There were 189 users in the Jupyter environment, including teaching staff and students who dropped out before week 3. After adding the filter of week 3 list, 178 students were included in the dataset. The next step is to remove inactive students. 
+- Note that the student list was from week 3, therefore, if any students who enrolled after week 3 were not included in the analysis (as proposed in the ethics application). In addition, some students might drop out of the unit after week 3. For those students, I will apply a filter to check when was their last activity in the Jupyter environment. No further activities after the census day are considered to be inactive and will not be included in the analysis. There were 193 users in the Jupyter environment, including teaching staff. The next step is to remove inactive students. 
 - In order to compare dates, I need to convert `request_time` column to a datetime data type. I have also convert the datetime to Brisbane time as the original `request_time` used UTC time. The new column is named as `datetime_bne`. 
-- Based on the filter, 4 students dropped out of this unit before the census day. 4 students dropped out of this unit after the census day, before the first assignment is due. 1 student dropped out right before the date for "withdraw without an academic panelty". Those students were not included in the analysis, therefore, **data from a total of 169 students will be included in the analysis**. 
+- Based on the filter, 4 students dropped out of this unit before the census day. 4 students dropped out of this unit after the census day, before the first assignment is due. 1 student dropped out right before the date for "withdraw without an academic panelty". So the following filter was applied to exclude those students (in the order of the filter):
 
+    1. Students whose first activity didn't happen until week 4 (after the census day). Which means those students didn't use the Jupyter environment until week 4 (or even later). 12 students were excluded.
+    2. Students who didn't have any activities after withdrawing without academic penalty date. 14 student was excluded.
+    3. Teaching staff members and Jupyter administrator were excluded. 6 staff members were excluded.
+
+In the end, **data from a total of 161 students will be included in the analysis**. 
+
+### Other data cleaning steps
+
+> Note: this part will be updated as the analysis progresses. 
+
+- It's important to categorise different types of notebook, a new column is added to the dataframe called `notebook_category`. The categories are: `studio`, `tutorial`, `solution`, `assignment` and `self-generated`. Please note all the notebooks that are not provided from the unit are considered as `self-generated`.
+
+### Important dates to keep in mind 
+#### Important dates for the semester
+| Event                                           | Dates                                      |
+|-------------------------------------------------|--------------------------------------------|
+| Semester 1, 2023                               | 2023-02-27 (Monday, Week 1) to 2023-07-04 (Sunday, Week 13) |
+| Census day                                     | Friday, 2023-03-24 (Week 4)                |
+| Mid-semester break                             | 2023-04-10 (Monday, Week 6) to 2023-04-21 (Friday, Week 7) |
+| Withdraw from the unit without academic penalty| 2023-05-05 (Friday, Week 9)                |
+#### Important dates for this unit
+
+| Event                                          | Dates                                      |
+|------------------------------------------------|--------------------------------------------|
+| No tutorial on week 1                         | 2023-02-27 (Monday, Week 1) to 2023-03-03 (Friday, Week 1) |
+| Drop-in session on week 4                    | 2023-03-20 (Monday, Week 4) to 2023-03-24 (Friday, Week 4) |
+| No classes during mid-semester break         | 2023-04-10 (Monday, Week 6) to 2023-04-17 (Friday, Week 6) |
+| Drop-in session on week 7                    | 2023-04-17 (Monday, Week 7) to 2023-04-21 (Friday, Week 7) |
+| Assignment 1 due                             | 2023-04-23 (Sunday, Week 7)               |
+| Drop-in session on week 12                   | 2023-05-22 (Monday, Week 12) to 2023-05-26 (Friday, Week 12) |
+| Assignment 2 due                          | 2023-05-28 (Sunday, Week 12)              |
+
+Note: Assignment 2 is the last assignment that requires using Jupyter Notebook for this unit.  
+
+## Exploratory data analysis
+
+### What is the notebook usage like?
+
+<div class="l-page">
+  <iframe src="{{ '/assets/plotly/notebook_usage.html' | relative_url }}" frameborder='0' scrolling='no' height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+Interpretation of the plot above:
+- The notebooks were opened by most students are assignment 1, self-generated notebooks, and the first studio notebook. 
+- The solutions were the least viewed notebooks. 
+- In general, studio notebooks were opened by more students than the tutorial notebooks. 
+- Also keep in mind that the notebooks were released at different times. Some notebooks were released towards the end of the semester, so it is less likely to be opened by more students. 
+- It was interesting to see that solutions were the least visited notebooks. This could be because they received solutions by participating in the studio and tutorial sessions? Or they didn't bother to look after the sessions?
