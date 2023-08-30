@@ -262,12 +262,14 @@ In the end, **data from a total of 161 students will be included in the analysis
 
 ### Important dates to keep in mind 
 #### Important dates for the semester
+
 | Event                                           | Dates                                      |
 |-------------------------------------------------|--------------------------------------------|
 | Semester 1, 2023                               | 2023-02-27 (Monday, Week 1) to 2023-07-04 (Sunday, Week 13) |
 | Census day                                     | Friday, 2023-03-24 (Week 4)                |
 | Mid-semester break                             | 2023-04-10 (Monday, Week 6) to 2023-04-21 (Friday, Week 7) |
 | Withdraw from the unit without academic penalty| 2023-05-05 (Friday, Week 9)                |
+
 #### Important dates for this unit
 
 | Event                                          | Dates                                      |
@@ -287,7 +289,7 @@ Note: Assignment 2 is the last assignment that requires using Jupyter Notebook f
 ### What is the notebook usage like?
 
 <div class="l-page">
-  <iframe src="{{ '/assets/plotly/notebook_usage.html' | relative_url }}" frameborder='0' scrolling='no' height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
+  <iframe src="{{ '/assets/plotly/fig_notebook_usage.html' | relative_url }}" frameborder='0' scrolling='no' height="600px" width="100%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 Interpretation of the plot above:
@@ -296,3 +298,16 @@ Interpretation of the plot above:
 - In general, studio notebooks were opened by more students than the tutorial notebooks. 
 - Also keep in mind that the notebooks were released at different times. Some notebooks were released towards the end of the semester, so it is less likely to be opened by more students. 
 - It was interesting to see that solutions were the least visited notebooks. This could be because they received solutions by participating in the studio and tutorial sessions? Or they didn't bother to look after the sessions?
+- Even though the self-generated notebooks can be used as a good indication of students' curiosity, however, it might not be accurate. Based on some conversations with students, some students used the Jupyter environment to complete assignments from other units. 
+
+It will be useful to know how often each notebook has been used. This can be achieved by counting the number of sessions each notebook has been opened. Again, since the notebooks were released at different times, it is not fair to compare the number of sessions, but it will give some ideas about the usage of each notebook. 
+
+<div class="l-page">
+  <iframe src="{{ '/assets/plotly/fig_notebook_session_count_vs_user_count.html' | relative_url }}" frameborder='0' scrolling='no' height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+Interpretation of the plot above:
+- Students spent more time working on Assessment 1 than Assessment 2. However, they might use assessment 1 as a reference for their assessment 2.
+- The self-generated notebooks were used the most. This is because ALL other notebooks were generated from the self-generated notebooks.
+- Lots of solution notebooks never been opened by some students. 
+- Module A and Module B were the most frequently used notebooks. This might be because there were released at the beginning of the semester.
