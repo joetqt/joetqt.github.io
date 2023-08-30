@@ -540,12 +540,34 @@ Since there are around <strong>7.7 millions</strong> of files, it will take a lo
 
 <h3 id="important-dates-to-keep-in-mind">Important dates to keep in mind</h3>
 <h4 id="important-dates-for-the-semester">Important dates for the semester</h4>
-<p>| Event                                           | Dates                                      |
-|————————————————-|——————————————–|
-| Semester 1, 2023                               | 2023-02-27 (Monday, Week 1) to 2023-07-04 (Sunday, Week 13) |
-| Census day                                     | Friday, 2023-03-24 (Week 4)                |
-| Mid-semester break                             | 2023-04-10 (Monday, Week 6) to 2023-04-21 (Friday, Week 7) |
-| Withdraw from the unit without academic penalty| 2023-05-05 (Friday, Week 9)                |</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Dates</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Semester 1, 2023</td>
+      <td>2023-02-27 (Monday, Week 1) to 2023-07-04 (Sunday, Week 13)</td>
+    </tr>
+    <tr>
+      <td>Census day</td>
+      <td>Friday, 2023-03-24 (Week 4)</td>
+    </tr>
+    <tr>
+      <td>Mid-semester break</td>
+      <td>2023-04-10 (Monday, Week 6) to 2023-04-21 (Friday, Week 7)</td>
+    </tr>
+    <tr>
+      <td>Withdraw from the unit without academic penalty</td>
+      <td>2023-05-05 (Friday, Week 9)</td>
+    </tr>
+  </tbody>
+</table>
+
 <h4 id="important-dates-for-this-unit">Important dates for this unit</h4>
 
 <table>
@@ -594,7 +616,7 @@ Since there are around <strong>7.7 millions</strong> of files, it will take a lo
 <h3 id="what-is-the-notebook-usage-like">What is the notebook usage like?</h3>
 
 <div class="l-page">
-  <iframe src="/assets/plotly/notebook_usage.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
+  <iframe src="/assets/plotly/fig_notebook_usage.html" frameborder="0" scrolling="no" height="600px" width="100%" style="border: 1px dashed grey;"></iframe>
 </div>
 
 <p>Interpretation of the plot above:</p>
@@ -604,6 +626,21 @@ Since there are around <strong>7.7 millions</strong> of files, it will take a lo
   <li>In general, studio notebooks were opened by more students than the tutorial notebooks.</li>
   <li>Also keep in mind that the notebooks were released at different times. Some notebooks were released towards the end of the semester, so it is less likely to be opened by more students.</li>
   <li>It was interesting to see that solutions were the least visited notebooks. This could be because they received solutions by participating in the studio and tutorial sessions? Or they didn’t bother to look after the sessions?</li>
+  <li>Even though the self-generated notebooks can be used as a good indication of students’ curiosity, however, it might not be accurate. Based on some conversations with students, some students used the Jupyter environment to complete assignments from other units.</li>
+</ul>
+
+<p>It will be useful to know how often each notebook has been used. This can be achieved by counting the number of sessions each notebook has been opened. Again, since the notebooks were released at different times, it is not fair to compare the number of sessions, but it will give some ideas about the usage of each notebook.</p>
+
+<div class="l-page">
+  <iframe src="/assets/plotly/fig_notebook_session_count_vs_user_count.html" frameborder="0" scrolling="no" height="500px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+<p>Interpretation of the plot above:</p>
+<ul>
+  <li>Students spent more time working on Assessment 1 than Assessment 2. However, they might use assessment 1 as a reference for their assessment 2.</li>
+  <li>The self-generated notebooks were used the most. This is because ALL other notebooks were generated from the self-generated notebooks.</li>
+  <li>Lots of solution notebooks never been opened by some students.</li>
+  <li>Module A and Module B were the most frequently used notebooks. This might be because there were released at the beginning of the semester.</li>
 </ul>
 
           </article>
