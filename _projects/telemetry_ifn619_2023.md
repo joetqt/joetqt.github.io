@@ -298,7 +298,8 @@ Interpretation of the plot above:
 - In general, studio notebooks were opened by more students than the tutorial notebooks. 
 - Also keep in mind that the notebooks were released at different times. Some notebooks were released towards the end of the semester, so it is less likely to be opened by more students. 
 - It was interesting to see that solutions were the least visited notebooks. This could be because they received solutions by participating in the studio and tutorial sessions? Or they didn't bother to look after the sessions?
-- Even though the self-generated notebooks can be used as a good indication of students' curiosity, however, it might not be accurate. Based on some conversations with students, some students used the Jupyter environment to complete assignments from other units. 
+- Even though the self-generated notebooks can be used as a good indication of students' curiosity, however, it might not be accurate. Based on some conversations with students, some students used the Jupyter environment to complete assignments from other units. So I will exclude self-generated notebooks from some of the analysis -- particularly the ones involving counting the number of notebooks opened by each student.
+- In addition to the point above, self-generated notebooks are not one single notebook, instead, it is a collection of notebooks. Therefore, it is reasonable to exclude them from some analysis. However, later when we are looking for relationship between notebooks, it is important to include self-generated notebooks.
 
 It will be useful to know how often each notebook has been used. This can be achieved by counting the number of sessions each notebook has been opened. Again, since the notebooks were released at different times, it is not fair to compare the number of sessions, but it will give some ideas about the usage of each notebook. 
 
@@ -311,3 +312,13 @@ Interpretation of the plot above:
 - The self-generated notebooks were used the most. This is because ALL other notebooks were generated from the self-generated notebooks.
 - Lots of solution notebooks never been opened by some students. 
 - Module A and Module B were the most frequently used notebooks. This might be because there were released at the beginning of the semester.
+- [IDEA] It might be useful to see when a notebook was used the most. A heatmap over time might be useful.
+
+<div class="l-page">
+  <iframe src="{{ '/assets/plotly/fig_notebook_usage_heatmap.html' | relative_url }}" frameborder='0' scrolling='no' height="600px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+Since the data were quite skewed -- students spent much more time on their assignment notebook. So to emphasise the differences in less frequently used notebooks, I chose to use a logarithmic scale to plot the data.
+
+- [IDEA] add information about the date when the notebooks were released (in the plot and in the dataframe). And add assignment deadlines to the plot.
+
