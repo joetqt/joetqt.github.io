@@ -615,6 +615,8 @@ Since there are around <strong>7.7 millions</strong> of files, it will take a lo
 
 <h3 id="what-is-the-notebook-usage-like">What is the notebook usage like?</h3>
 
+<p>At this stage, I am focusing on the class level. The purpose of it is to get a sense of how the data might be distributed. However, in order to find “patterns” of curiosity in the data, I will need to look into individual students’ data. That will be the next step.</p>
+
 <div class="l-page">
   <iframe src="/assets/plotly/fig_notebook_usage.html" frameborder="0" scrolling="no" height="600px" width="100%" style="border: 1px dashed grey;"></iframe>
 </div>
@@ -646,15 +648,37 @@ Since there are around <strong>7.7 millions</strong> of files, it will take a lo
 </ul>
 
 <div class="l-page">
-  <iframe src="/assets/plotly/fig_notebook_usage_heatmap.html" frameborder="0" scrolling="no" height="600px" width="100%" style="border: 1px dashed grey;"></iframe>
+  <iframe src="/assets/plotly/fig_notebook_usage_heatmap.html" frameborder="0" scrolling="no" height="550px" width="150%" style="border: 1px dashed grey;"></iframe>
 </div>
 
-<p>Since the data were quite skewed – students spent much more time on their assignment notebook. So to emphasise the differences in less frequently used notebooks, I chose to use a logarithmic scale to plot the data.</p>
-
 <ul>
-  <li>[IDEA] add information about the date when the notebooks were released (in the plot and in the dataframe). And add assignment deadlines to the plot.</li>
+  <li>Since the data were quite skewed – students spent much more time on their assignment notebook. So to emphasise the differences in less frequently used notebooks, I chose to use a logarithmic scale to plot the data.</li>
+  <li>The notebooks were organised based on their released dates. A new dataframe was generated that includes the release dates of notebooks. This new dataframe might be helpful for later tasks as well.</li>
 </ul>
 
+<p>Interpretation from the heatmap above:</p>
+<ul>
+  <li>The assignment notebooks were used the most, particular when the deadlines were approaching.</li>
+  <li>Students might use their first assignment notebooks as a reference for their second assignment.</li>
+  <li>Students tended to use studio and tutorial notebooks during completing their assignments.</li>
+  <li>Solutions were not used as much as other notebooks. I wonder whether because students already have the answers by attending the studio and tutorial sessions, and only used the solutions when they didn’t record all the information from the sessions. Students uses studio and tutorial notebooks as a reference for their assignments because they might have some extra notes they took during those sessions, which were not included in the solutions.</li>
+</ul>
+
+<h3 id="what-about-events-by-notebook">What about events by notebook?</h3>
+
+<p>Now we got some sense of the notebook usage, it will be useful to know what kind of events were triggered by students in each notebook. Again, at this stage, we are still looking at class level trying to get a sense of the data. Based on previous experience, it might not be useful to look at events for all notebooks, so it is better to look at events for each type of notebook.</p>
+
+<div class="l-page">
+  <iframe src="/assets/plotly/fig_percentage_of_events_for_each_category_of_notebooks.html" frameborder="0" scrolling="no" height="400px" width="160%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+<p>Interpretation of the plot above:</p>
+<ul>
+  <li>The most common event is <code class="language-plaintext highlighter-rouge">scroll</code>, which is expected (except for solution notebooks).</li>
+  <li>The most surprised event is <code class="language-plaintext highlighter-rouge">cell_errored</code> for solution notebooks. Also keep in mind there were the least events for solution notebooks, so more likely there were some outliers in the data. I should check the reason for the high cell error rate for solution notebooks. My initial thought was students might use solution notebooks as their testing ground for their own code. However, the add_cell events were almost non-exist, so it was less likely to be the case.</li>
+  <li>Copy and paste events were an interesting one. Assessment notebooks had the highest rate for paste among other notebooks, and studio and tutorial notebooks had slightly higher copy rate. There might be a connection that students copy code from studio and tutorial notebooks and paste them into their assessment notebooks.</li>
+  <li>The relationship will be easier to see if we use some network analysis to see the relationship between notebooks, and between events.</li>
+</ul>
 
           </article>
 
