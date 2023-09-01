@@ -263,12 +263,14 @@ In the end, **data from a total of 161 students will be included in the analysis
 ### Important dates to keep in mind 
 #### Important dates for the semester
 
-| Event                                           | Dates                                      |
+
+| Event | Dates |
 |-------------------------------------------------|--------------------------------------------|
 | Semester 1, 2023                               | 2023-02-27 (Monday, Week 1) to 2023-07-04 (Sunday, Week 13) |
 | Census day                                     | Friday, 2023-03-24 (Week 4)                |
 | Mid-semester break                             | 2023-04-10 (Monday, Week 6) to 2023-04-21 (Friday, Week 7) |
 | Withdraw from the unit without academic penalty| 2023-05-05 (Friday, Week 9)                |
+
 
 #### Important dates for this unit
 
@@ -287,6 +289,8 @@ Note: Assignment 2 is the last assignment that requires using Jupyter Notebook f
 ## Exploratory data analysis
 
 ### What is the notebook usage like?
+
+At this stage, I am focusing on the class level. The purpose of it is to get a sense of how the data might be distributed. However, in order to find "patterns" of curiosity in the data, I will need to look into individual students' data. That will be the next step. 
 
 <div class="l-page">
   <iframe src="{{ '/assets/plotly/fig_notebook_usage.html' | relative_url }}" frameborder='0' scrolling='no' height="600px" width="100%" style="border: 1px dashed grey;"></iframe>
@@ -315,10 +319,28 @@ Interpretation of the plot above:
 - [IDEA] It might be useful to see when a notebook was used the most. A heatmap over time might be useful.
 
 <div class="l-page">
-  <iframe src="{{ '/assets/plotly/fig_notebook_usage_heatmap.html' | relative_url }}" frameborder='0' scrolling='no' height="600px" width="100%" style="border: 1px dashed grey;"></iframe>
+  <iframe src="{{ '/assets/plotly/fig_notebook_usage_heatmap.html' | relative_url }}" frameborder='0' scrolling='no' height="550px" width="150%" style="border: 1px dashed grey;"></iframe>
 </div>
 
-Since the data were quite skewed -- students spent much more time on their assignment notebook. So to emphasise the differences in less frequently used notebooks, I chose to use a logarithmic scale to plot the data.
+- Since the data were quite skewed -- students spent much more time on their assignment notebook. So to emphasise the differences in less frequently used notebooks, I chose to use a logarithmic scale to plot the data.
+- The notebooks were organised based on their released dates. A new dataframe was generated that includes the release dates of notebooks. This new dataframe might be helpful for later tasks as well. 
 
-- [IDEA] add information about the date when the notebooks were released (in the plot and in the dataframe). And add assignment deadlines to the plot.
+Interpretation from the heatmap above:
+- The assignment notebooks were used the most, particular when the deadlines were approaching. 
+- Students might use their first assignment notebooks as a reference for their second assignment. 
+- Students tended to use studio and tutorial notebooks during completing their assignments.
+- Solutions were not used as much as other notebooks. I wonder whether because students already have the answers by attending the studio and tutorial sessions, and only used the solutions when they didn't record all the information from the sessions. Students uses studio and tutorial notebooks as a reference for their assignments because they might have some extra notes they took during those sessions, which were not included in the solutions.
 
+### What about events by notebook?
+
+Now we got some sense of the notebook usage, it will be useful to know what kind of events were triggered by students in each notebook. Again, at this stage, we are still looking at class level trying to get a sense of the data. Based on previous experience, it might not be useful to look at events for all notebooks, so it is better to look at events for each type of notebook.
+
+<div class="l-page">
+  <iframe src="{{ '/assets/plotly/fig_percentage_of_events_for_each_category_of_notebooks.html' | relative_url }}" frameborder='0' scrolling='no' height="400px" width="160%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+Interpretation of the plot above:
+- The most common event is `scroll`, which is expected (except for solution notebooks). 
+- The most surprised event is `cell_errored` for solution notebooks. Also keep in mind there were the least events for solution notebooks, so more likely there were some outliers in the data. I should check the reason for the high cell error rate for solution notebooks. My initial thought was students might use solution notebooks as their testing ground for their own code. However, the add_cell events were almost non-exist, so it was less likely to be the case.
+- Copy and paste events were an interesting one. Assessment notebooks had the highest rate for paste among other notebooks, and studio and tutorial notebooks had slightly higher copy rate. There might be a connection that students copy code from studio and tutorial notebooks and paste them into their assessment notebooks.
+- The relationship will be easier to see if we use some network analysis to see the relationship between notebooks, and between events. 
