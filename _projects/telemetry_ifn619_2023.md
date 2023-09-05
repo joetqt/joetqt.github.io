@@ -344,3 +344,66 @@ Interpretation of the plot above:
 - The most surprised event is `cell_errored` for solution notebooks. Also keep in mind there were the least events for solution notebooks, so more likely there were some outliers in the data. I should check the reason for the high cell error rate for solution notebooks. My initial thought was students might use solution notebooks as their testing ground for their own code. However, the add_cell events were almost non-exist, so it was less likely to be the case.
 - Copy and paste events were an interesting one. Assessment notebooks had the highest rate for paste among other notebooks, and studio and tutorial notebooks had slightly higher copy rate. There might be a connection that students copy code from studio and tutorial notebooks and paste them into their assessment notebooks.
 - The relationship will be easier to see if we use some network analysis to see the relationship between notebooks, and between events. 
+
+### What about events by students?
+
+Students will have different patterns of using Jupyter notebooks. Therefore, it is important to look at the events by students. 
+The underlying hypothesis: *more curious students will exhibit different patterns of behaviour in the telemetry data and moreover those different patterns will correlate with features signifying curiosity.* 
+To be more specific, at this stage, I am looking for patterns that signifying information seeking behaviour, which is essentially the backbone(?) of curiosity.
+
+A few thoughts on what to explore on student behaviour:
+
+- How many activities they have in the Jupyter environment?
+
+The more active they are, they more chance that they are seeking information. By counting their activities, we can get a sense of how active they are in the Jupyter environment. Keep in mind some students might use their local Jupyter environment, so the number of activities might not be accurate. However, those students should be able to be identified by their low number of activities and types of events.
+
+- How many sessions they have in the Jupyter environment?
+- How long they stay in the Jupyter environment?
+
+Opening each notebook will trigger a new session; each session has a sequence of events; each event has a timestamp. So, we can calculate how long they stayed in the Jupyter environment by looking at the time difference between the first and last event in a session. However, if a student opens multiple notebooks at the same time, the lengths of sessions will overlap; however, we can plot them on a timeline by session to see the overlap. Each student will have one individual plot, so there will be many plots. So it would be better to sample students based on some criteria such as the number of activities. 
+
+- What kind of notebooks they use the most?
+- What kind of events they trigger the most?
+- What kind of errors they run into the most?
+
+Theoratically, different types of notebooks should associate with different types of events, which should associate with their purpose or motivation for learning. For example, students might use studio notebooks to follow the steps of a lecture and fill the gaps as they listen to the lecture; for a tutorial notebook, students will try some code by themselves. Therefore, you would imagine the majority of events for a studio notebook will be executing cells, while a tutorial notebook will have a wider variety of events such as copying, pasting, running into errors, etc. This example is only considering the scenario during a learning experience by a student, it may change when assignments involved. So I also need to consider WHEN those events happened. 
+
+- What is their motivation for using the Jupyter environment? (e.g., practice, assignment deadline, etc.?)
+
+Previous questions should build up to answer this question. The challenge here is how to connect this question to curiosity. [TO DO] I might need to revisit the literature on motivation theory and curiosity. And I might also connect this question to the task-oriented learning model. 
+
+**Below are some plots to answer the questions above.**
+
+- How many activities they have in the Jupyter environment?
+- How many sessions they have in the Jupyter environment?
+
+<div class="l-page">
+  <iframe src="{{ '/assets/plotly/fig_event_count_per_student.html' | relative_url }}" frameborder='0' scrolling='no' height="400px" width="160%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+A few students had extensively large number of events. Also, a group of students were not active in the environment at all. So we cannot just simply categorise them based on the number of events. 
+
+<div class="l-page">
+  <iframe src="{{ '/assets/plotly/fig_session_count_per_student.html' | relative_url }}" frameborder='0' scrolling='no' height="400px" width="160%" style="border: 1px dashed grey;"></iframe>  
+</div>
+
+Numbers of sessions tended to be more skewed than the number of events. There should be some positive correlation between the number of events and the number of sessions. 
+
+<div class="l-page">
+  <iframe src="{{ '/assets/plotly/fig_event_count_vs_session_count_per_student.html' | relative_url }}" frameborder='0' scrolling='no' height="400px" width="160%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+It does show some positive correlation. However, if we look at the right tail, the scatters tended to be more spread out. This indicates that some students who were more active in the environment tended to spend longer time in their notebooks. Below I plot both event count and session count on the same plot, but they are in different scales. 
+
+<div class="l-page">
+  <iframe src="{{ '/assets/plotly/fig_compare_event_and_session_counts.html' | relative_url }}" frameborder='0' scrolling='no' height="400px" width="160%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+  It doesn't appear that there is a strong correlation between the number of events and the number of sessions, and there are defintely some outliers -- very high event counts but low session counts, and vice versa. But keep in mind they are not in the same scale, so it is hard to compare. 
+
+
+NEXT: INDIVIDUAL LEVEL
+
+Next: check each student for event count and session count. use bar plots. 
+
+Next: check session length. use timeline. 
