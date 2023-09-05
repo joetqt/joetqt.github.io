@@ -136,6 +136,7 @@
 
     </div>
 </div>
+
 <h1 id="week-2-learning-check-in-data">Week 2 learning check-in data</h1>
 
 <p><em>Note: The following information was as accurate as on  2023-08-08 10:45:52 (the last activity in the dataset after syncing).</em></p>
@@ -146,11 +147,9 @@
   <li>There are 4 check-ins in the notebook.</li>
   <li>Data for 123 students were recorded. » We have 142 students enrolled, which means 19 students haven’t even used the Jupyter environment.</li>
   <li>56 students completed at least 1 check-in. » Less than half of the students used the check-in function :’(</li>
-  <li>Most students were confident - as most students had a mean confidence level above 8 (see plot below).</li>
+  <li>Most students were confident - as most students had a mean confidence level above 8.</li>
   <li>13 students completed at least 4 check-ins. The majority checked in 3 times. 25 students checked in once or twice. However, at this stage, not all check-ins are genuine. I need to do more data cleaning.</li>
 </ul>
-
-<p><strong>[INSERT PLOT]</strong></p>
 
 <h2 id="check-ins-during-week-2-studio-sessions">Check-ins during Week 2 studio sessions</h2>
 
@@ -162,6 +161,14 @@
   <li>In general, students were quite confident about their learning for the session, as the mean confidence levels for a majority of students were above 7.</li>
   <li>By roughly observing individual inputs, there were not many changes in the confidence levels during the session. This might be because there were not enough check-ins for the session to show some patterns.</li>
 </ul>
+
+<div class="l-page">
+  <iframe src="/assets/plotly/fig_303_wk2_mean_conf_studio.html" frameborder="0" scrolling="no" height="400px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+<div class="l-page">
+  <iframe src="/assets/plotly/fig_303_wk2_checkin_count_studio.html" frameborder="0" scrolling="no" height="450px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
 
 <p>Potential issues that need to be solved:</p>
 
@@ -178,6 +185,71 @@
   <li>A more close examination of the time spans for check-ins</li>
   <li>Adding students who checked in outside the studio session</li>
 </ul>
+
+<h1 id="week-7-observations">Week 7 observations</h1>
+
+<p>Data was synced in the morning of 2023-09-05. The latest record in this sync was 2023-09-04 22:37:18.</p>
+
+<p>Quick notes on the data:</p>
+<ul>
+  <li>Now we have 140 students in the dataset. Changed from 123 on week 2.</li>
+  <li>Among all the 140 students, 101 students have completed at least 1 check-in.</li>
+  <li>Among all the data, several students have an average of 10 out of 10 for their check-ins.</li>
+  <li>In general, the average confidence level for most students were reasonably high (above 5). Only a few students had an average confidence level below 5.</li>
+  <li>For the last 7 weeks, we have 3 sessions with check-ins: Week 2, Week 4 and Week 7. The maximum number of check-ins should be 13. Based on all the data, majority students who checked in less than 12 times. However, 14 students checked in more than 13 times.</li>
+</ul>
+
+<div class="l-page">
+  <iframe src="/assets/plotly/fig_303_checkin_count_all.html" frameborder="0" scrolling="no" height="400px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+<h2 id="before-looking-into-week-7-data-lets-start-with-week-4">Before looking into week 7 data, let’s start with week 4</h2>
+
+<p>Instead of looking for only live studio sessions, let’s start by looking for the whole week. So it potentially includes students who checked in outside the studio sessions.</p>
+
+<ul>
+  <li>111 students logged into the Jupyter environment on week 4.</li>
+  <li>76 students checked in at least once during the week.</li>
+  <li>The majority of students who checked in this week had a mean confidence level above 6. 8 students had a mean confidence level below 6, one student was 1.6.</li>
+  <li>5 check-ins in the notebooks for this week. The majority checked in 5 or less times. 16 students checked in more than 5 times.</li>
+</ul>
+
+<p>During studio sessions only:</p>
+<ul>
+  <li>60 students logged into the Jupyter environment during the studio sessions.</li>
+  <li>53 of them checked in during the studio sessions.</li>
+  <li>Similar patterns than the whole week data. 8 students had a mean confidence level below 6, one student was 1.6. [CHECK] Are they the same students?</li>
+  <li>5 check-ins in the notebooks for this week. The majority checked in 5 or less times. 9 students checked in more than 5 times.</li>
+</ul>
+
+<div class="l-page">
+  <iframe src="/assets/plotly/fig_303_wk4_mean_conf_studio.html" frameborder="0" scrolling="no" height="400px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+<div class="l-page">
+  <iframe src="/assets/plotly/fig_303_wk4_checkin_count_studio.html" frameborder="0" scrolling="no" height="450px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+<h2 id="week-7-data">Week 7 data</h2>
+
+<p>Since this is still at the beginning of Week 7, so I am going to look at the check-ins during the live studio sessions only.</p>
+
+<p>During studio sessions only:</p>
+<ul>
+  <li>49 students logged into the Jupyter environment during the studio sessions.</li>
+  <li>44 of them checked in during the studio sessions.</li>
+  <li>Similar patterns from previous weeks. 6 students had a mean confidence level below 6, one student was 2.2.</li>
+  <li>4 check-ins in the notebooks for this week. Almost half of the students (n=20) checked in more than 4 times.</li>
+</ul>
+
+<div class="l-page">
+  <iframe src="/assets/plotly/fig_303_wk7_mean_conf_studio.html" frameborder="0" scrolling="no" height="400px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+<div class="l-page">
+  <iframe src="/assets/plotly/fig_303_wk7_checkin_count_studio.html" frameborder="0" scrolling="no" height="450px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
 
           </article>
 
