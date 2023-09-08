@@ -116,3 +116,42 @@ During studio sessions only:
   <iframe src="{{ '/assets/plotly/fig_303_wk7_checkin_count_studio.html' | relative_url }}" frameborder='0' scrolling='no' height="450px" width="100%" style="border: 1px dashed grey;"></iframe>
 </div>
 
+# Is the check-in data useful for quantum modelling? -- A very early stage of exploration
+
+## Data preparation
+
+Defining a learning session: From my understanding, when we discussing quantum modelling, we are talking about the state when a learner is in their state of learning. Therefore, it is important to consider that the modelling is going to pick up learner's confidence level during one learning session. Therefore, I am considering that each week's studio session is a learning session, and only when the student who checked in during one continuous learning session, the data will be used for modelling. For example, if a student who checked in during a studio session, however, this student didn't stay till the end of the session and watched the recordings later, then the data will not be used for modelling. (I need to rephrase this part in a clearer way but hopefully the idea makes sense for now.)
+
+The plan for exploration:
+
+1. filter the data only containing the check-in data during the studio sessions (Monday morning 9:00 am - 11:00 am). 
+2. filter the check-ins only alligned with the studio session time when lecturers finished presenting the content and asked students for a check-in. 
+3. also investigating why some students have more check-in than expected. Did they just randomly run the cell and didn't really check in? 
+4. visualise the confidence levels of each participant
+5. modelling confidence levels
+
+Let's use week 7 data as an example.
+
+Some notes from the data preparation:
+
+- 44 students checked in during the studio session.
+- all the checkins are from the correct notebook. 
+- Andrew and Luisa might have different pace for the 4 check-ins, here are the time when they introduced each check-in:
+    - Andrew: 9:23, 9:32, 9:43, 10:40
+    - Luisa: 9:25, 9:39, 9:44, 10:40
+    - so the paces were quite similar. Mind that some students might check in before or after the lecturers introduced the check-ins. 
+- Looks like a few students checked in around 10:15 when there was no check-in. However, the gap between check-in 3 and check-in 4 was quite long. So they might jump around while the lecturers were demonstrating an example. It also might be because they lost interest in the example, and it led to low participation in the last check-in. 
+
+## Basic visualisation
+
+I plotted each individual student's confidence level during the studio session. The confidence levels were plotted in the order of time. There were 44 subplots so it will be too large to share here. Here I combined all the subplots into one plot. 
+
+<div class="l-page">
+  <iframe src="{{ '/assets/plotly/fig_303_wk7_checkin_time_distribution.html' | relative_url }}" frameborder='0' scrolling='no' height="600px" width="100%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+Looks like most students' self report confidence levels were quite random, or there were no changes to their confidence levels during the session. Some of the reported data were not accurate, as they tended to log multiple times in short period of time, and the times of their logs didn't match with the time when lecturers introduced the check-ins. 
+
+In general, most students' confidence levels stayed the same during the session. A few reported their levels dropped towards the end of the session. 
+
+Here is a question: can I trust the self-reported data? 
