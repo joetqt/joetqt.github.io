@@ -407,3 +407,59 @@ NEXT: INDIVIDUAL LEVEL
 Next: check each student for event count and session count. use bar plots. 
 
 Next: check session length. use timeline. 
+
+[TO BE CONTINUED...]
+
+## Correlation between events and actual activities 
+
+Let's take a detour here. 
+
+The purpose of this part is to match the events with what actual happened during the studio sessions. Ideally, some correlation will be found between the events, and by viewing the synchronised lecture recordings, we can identify some activities that might be associated with curiosity. This is kind of like a comparative analysis, so I am hoping to see different patterns from different groups of students, and I will try to correlate the patterns with curiosity.
+
+### Preparation 
+
+Here is the rough plan:
+
+1. figure out when the studio sessions happened (which week? what day of the week? what time of the day?)
+1. filter out the events that happened during the studio sessions
+1. plotting each week's activity, both group and individual. separate into groups?
+1. looking for some event intensive activities. for different groups (if exist)? 
+1. looking for some patterns in the events. for different groups (if exist)?
+
+#### Follow the plan:
+1. (+step 2) Studio sessions happened in the following weeks: 1, 2, 3, 5, 6, 8, 10, 11. There were 2 on campus studio sessions and 1 online studio session. All on-campus studio sessions were on Mondays (10am-12pm, 1pm-3pm), online sessions were on Tuesdays 3-5pm. The recordings were only for Monday 10am-12pm sessions and Tuesday 3-5pm sessions. **At this stage, I might just focus on the Monday 10am-12pm sessions.** The online sessions were in a slightly learning context, so it might not be the same patterns as the on-campus sessions. Later on, I can explore the online sessions a little bit further and looking for some different patterns. 
+
+I also included 10 minutes before and after the studio sessions. 
+After filtering, 131689 rows of data were left.
+
+### Week 1
+
+32 students attended the studio session. This might not be accurate, some students who didn't attend the studio session might still use the Jupyter environment. A quarter of the students who had less than 30 events were excluded from the analysis.
+
+Now looking at the real events on week 1. When the activity peaked at 11:46am, it was actually the first time the students were introduced Jupyter notebook. From there, Andrew did a quick demonstration on how to use markdown cells and how to run code cells. But it was the end of the class so he left the practice as homework. Therefore, it might not be too useful to look at the events during the first studio session.
+
+### Week 2
+
+By looking at week 2's data, there were several peaks in intensive activities. I reviewed the video where there were lots of activities, and potentially we can zoom in on those activities.
+
+<div class="l-page">
+  <iframe src="{{ '/assets/plotly/fig_week2_activities.html' | relative_url }}" frameborder='0' scrolling='no' height="400px" width="160%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+At 10:33, the first Python task was introduced. Students had around 2 minutes to work on the task. So I am going to look into the activities around 10:32-10:35. 
+
+The majority of the events were general use of Jupyter notebooks. Lots of `cell_errored` events but it was expected as the error was introduced by Andrew. But one student had 89 events while one student had only 4 events. 
+
+Students were using all sorts of notebooks during this time. A few created their own notebooks, some were working on the tutorial. A small number of students were using week 1's notebook and assignment 1 notebook. If I only include the studio notebook they were working on, there were less errors in the data. The numbers of events now ranged from 4 to 52. 2 students were not working on the studio notebook.
+
+<div class="l-page">
+  <iframe src="{{ '/assets/plotly/fig_types_of_events_week2_task1.html' | relative_url }}" frameborder='0' scrolling='no' height="400px" width="160%" style="border: 1px dashed grey;"></iframe>
+</div>
+
+From the plot above, I can't really see any patterns. The only thing that jumped out was `cell_execution` events. Students who had more events tended to have larger portion of `cell_execution` events. Apart from some outliers, we can also see there were more explorations for students who had more events. 
+
+**Can I really use the number of events as the indicator of curiosity?** More events = more active in the environment = more curious? 
+
+[IDEA] To look for correlation, instead of counting for how many events, I can look for how many events are associated with their assignment notebooks. Because I can argue that students who spend more time on their assignment are potentially more curious about learning. Then I can categorise them based on the number of events or proportion of events on their assignment notebooks.
+
+
