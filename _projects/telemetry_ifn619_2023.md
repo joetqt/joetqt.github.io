@@ -458,8 +458,26 @@ Students were using all sorts of notebooks during this time. A few created their
 
 From the plot above, I can't really see any patterns. The only thing that jumped out was `cell_execution` events. Students who had more events tended to have larger portion of `cell_execution` events. Apart from some outliers, we can also see there were more explorations for students who had more events. 
 
+What I expected to see was students who were more curious would have more exploratory events, as well as executing cells and running into errors. Navigations should be part of the exploring, but it is also part of the general use of Jupyter notebooks. In addition, it is expected to see a reasonable ratio between running into errors and executing cells, indicating there were exploring the code functionality and trying to 
+
 **Can I really use the number of events as the indicator of curiosity?** More events = more active in the environment = more curious? 
 
 [IDEA] To look for correlation, instead of counting for how many events, I can look for how many events are associated with their assignment notebooks. Because I can argue that students who spend more time on their assignment are potentially more curious about learning. Then I can categorise them based on the number of events or proportion of events on their assignment notebooks.
 
+#### Where to go from here? 
 
+- This is the beginning of the semester. Since this is an introductory course for stuents who are studying data analytics and data science, we can assume that most students were beginners in Python. The first few weeks were mainly about introducing basic Python concepts and functions and Jupyter notebooks. Therefore, it is expected that some students might not have many "explorations" in the Jupyter environment, because they probably didn't know what to do. 
+- The next step is to look at the events throughout the semester, and I am expecting to see more explorations at the semester progressed. So I might need to introduce what was the topic of the week, and what was the task that I am investigating. 
+- At this stage, I will focus on 3 tasks: from the beginning, middle and end of the semester.
+- Summary for what I looked at for week 2: This week was the first week after introducing the Jupyter environment, and it is the first session that students will work on some Python tasks in the Jupyter environment. This task asked students to import a dataset. If students didn't fill in the gap in the notebook, an error will be triggered. Therefore, it is expected to see some errors in the data. 
+- Interesting: the students who were active in this task was not active throughout the semester (based on the counts of all events for the whole semester). Only one student from the top 10 of all events showed up in this session (don't forget there were other two studio sessions). 
+
+### Week 6 
+
+This was half way through the semester. At this stage, students had already been working on mostly structured data and some unstructured data. Therefore, there should be familiar with common data structures and Python functions. The event counts were generally higher (almost doubled) for this week and last week. 
+
+This week focused on data visualisation. By looking at the data activity against the recording, there was a peak at 11:23. During that time, the lecturer has already demonstrated code how to improve the visualisation by adding labels and titles. The lecturer asked students to improve a plot by referring back to a code provided earlier in the class. During 11:20-11:24, students were working on the task, and around 11:25, the lecturer started demonstrating the solution.
+
+27 students had some activities during that 10 minute period, however, 21 students engaged with the activities. Interesting thing I found so far is that some students tended to use the class time working on their assignments. 
+
+[CONTINUE]: I modified the visualisation code, and now it displays better than earlier. But I haven't had a chance to modify week 2's visualisation yet. Also need to interpret week 6's visualisation. Looks promising as there are more exploration than week 2. 
