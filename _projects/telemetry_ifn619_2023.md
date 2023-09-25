@@ -481,3 +481,46 @@ This week focused on data visualisation. By looking at the data activity against
 27 students had some activities during that 10 minute period, however, 21 students engaged with the activities. Interesting thing I found so far is that some students tended to use the class time working on their assignments. 
 
 [CONTINUE]: I modified the visualisation code, and now it displays better than earlier. But I haven't had a chance to modify week 2's visualisation yet. Also need to interpret week 6's visualisation. Looks promising as there are more exploration than week 2. 
+
+
+### Week 8 
+
+This was the final week with some tasks in studio sessions for the semester. The first half of the studio session was mainly demonstrating on term count method for analysing unstructured data. From 11:10am, Andrew introduced a task asking students to follow the similar process from term count to fill in the gaps for TF/IDF. Students had a few minutes from 11:11 to work on this task till 11:16. 
+
+16 students had some activities during that 5 minute period, however, 14 students engaged with the activities. 
+
+
+## Let's focus on ALL the tasks in a week - Week 3
+
+[Note: I tried week 5 first but there were only one task was introduced for student to explore.]
+
+The analysis above may not be appropriate because we identified the patterns first and then try to correlate back to the tasks. There might be some cases that a task was introduced but students didn't engage with the task. Therefore, this section, I am going to review one week's lecture, and record the times when a task was introduced. Then I will look at the events around those times.
+
+Week 3 was selected as students had been working with the Jupyter environment for a few weeks, therefore, students should be familiar with the environment and basic Python functions. In this case, we can eliminate the possibility that students didn't engage with the tasks because they didn't know how to use the Jupyter environment (unless they never attended the previous sessions).
+
+To make it easier to match the actual time with the events, I editted the video to start exactly at 10am, and the timestamps should be easier to match with the recording. 
+
+### Task 1
+
+- Leading to the task + Explaining the task by the lecturer: 10:23:50
+- students working on the task: 10:25:00
+- Lecturer started asking questions: 10:26:50
+- Lecturer started demonstrating the approach (no coding yet): 10:27:55
+- Lecturer started filling the code: 10:29:50
+- Lecturer finished filling the code: 10:32:00
+- Lecturer ran the cell and explained: 10:33:00 - 10:36:15
+(which leads to the next task)
+
+### Task 2
+
+- Leading to the task + Explaining the task by the lecturer: 10:37:30
+- Students working on the task: 10:38:00
+- Lecturer started filling the gap (without talking): 10:38:55
+- Lecturer started demonstrating: 10:39:15
+
+### Task 3
+- Leading to the task: 11:13:15
+- Explaining the task by the lecturer: 11:13:55
+- Hint provided + solution + asking questions: 11:15:00
+
+
