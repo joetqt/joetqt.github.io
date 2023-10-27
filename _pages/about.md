@@ -33,6 +33,6 @@ In addition to my full time PhD commitment, I am involving in tutoring. Fortunat
 
 Outside of campus, I enjoy running. I started running with a few friends at the end of 2022 with the goal of losing some weight. Recently, I accomplished my first half marathon at the [Brisbane Marathon Festival 2023](https://results.sportseventservices.com.au/myresults.aspx?uid=16287-6267-2-520172). I am currently continuing my training with the aim of completing my first full marathon in 2024. On average, I run 4-5 times a week, covering distances from 5km to 25km per run. If you share the same passion for running and are looking for a running buddy, feel free to get in touch with me!
 
-If you want to learn more about me, please connect with me on [LinkedIn](https://www.linkedin.com/in/joeqtang/). You can also find my contact details at the bottom of this page. 
+If you want to learn more about me, please connect with me on [LinkedIn](https://www.linkedin.com/in/joeqtang/). You can also send me an [email](mailto:hello@joetqt.com). 
 
 Thank you for visiting!
