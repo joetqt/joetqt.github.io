@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Projects I am currently working on, or project I have done. 
+description: Projects I am currently working on, or project I have done. At this stage, this page serves the purpose of providing updates to students who participate in my projects.
 nav: true
 nav_order: 2
 display_categories: [phd project, other]
